@@ -1,0 +1,54 @@
+body{
+    background-color: #f2f2f3;
+};
+#container{
+    width: 80%;
+}
+#ul1{
+    background-color: #eee;
+    padding: 0;
+    width: 13%;
+    text-align: center;
+    height: 450px;
+}
+#disabled{
+    font-size: 16px;
+}
+#tab-content{
+    background-color: #fff;
+    width: 68%;
+    height: 450px;
+    margin:0 0 0 0px;
+    padding: 20px 5px 0 15px;
+    overflow-y: scroll;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#span1{
+    font-size: 18px;
+    margin-left: 8px;
+    font-weight: bold;
+}
+#ul2{
+    list-style-type: none;
+}
+#ul2 li{
+font-size: 18px;
+line-height: 1.5em;
+}
+#member{
+    font-size: 18px;
+}
+#speak{
+    font-size: 16px;
+    
+}
+#talk{
+     overflow-y: scroll;
+    font-size: 18px;
+}

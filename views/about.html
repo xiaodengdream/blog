@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>about</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/public/css/about.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-static-top" style="background-color:rgb(20,20,20);">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/dgmdream">Dgm dream</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+
+                </ul>
+                
+                <ul class="nav navbar-nav navbar-right">
+                    {{if nickname}}
+                    <li style="padding-top:7.5px; margin-right: 1px;">
+                        <img style="width: 38px;" src="{{avatar}}" class="img-circle">
+                      </li>
+                    <li class="dropdown">
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">{{nickname}}<span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="border-radius: 10px;">
+
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户:{{nickname}}</li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/info">个人主页</a></li>
+                            <li><a href="/set">设置</a></li>
+                            <li><a href="/logout">退出</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/speak">发言</a></li>
+                    {{else}}
+                    <li><a href="/login">登录</a></li>
+                    <li><a href="/register">注册</a></li>
+                    {{/if}}
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+
+    <div class="container">
+     <div class="jumbotron" id="jumbostron">
+         <P>此网站纯属个人制作，如有侵权请联系本人</P>
+         <p>
+             邮箱:1342677061@qq.com
+         </p>
+         
+         <p>
+             微信：wxid_ev6dt790i5X
+         </p>
+     </div>
+    </div>
+</body>
+</html>

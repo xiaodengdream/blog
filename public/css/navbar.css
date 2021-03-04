@@ -1,0 +1,60 @@
+body {
+    min-height: 2000px;
+    background-color: #eee;
+  }
+  
+  .navbar-static-top {
+    margin-bottom: 19px;
+  }
+#navbar ul li{
+  margin-left: 8px;
+}
+
+  #jumbostron{
+    background-color: #fff;
+    width: 80%;
+  }
+
+#menu{
+  margin: -25px 0 0 -55px;
+}  
+  #menu ul li{
+    list-style-type: none;
+    display: inline-flex;
+    margin-right: 35px;
+    border-radius: 5px;
+    padding:3px;
+  }
+  #menu ul li a{
+    text-decoration: none;
+    font-size:15px;
+    color: black;
+  }
+  #menu ul li a:hover{
+    text-decoration: none;
+    color:rgb(0, 171, 255);
+  }
+
+  #comments{
+    margin: 2px 0 0 -55px;
+  }
+  #comments ul li{
+    list-style-type: none;
+    margin-bottom: 10px;
+    border-left: 0;
+    border-right: 0;
+    margin-bottom: -1px;
+  }
+  #comments ul li a{
+    text-decoration: none;
+    font-size:16px;
+    color:rgb(72,72,72)
+  }
+  #comments ul li a:hover{
+   
+    color:rgb(0, 171, 255);
+  }
+  #times{
+    margin-top: 10px;
+  }
+  

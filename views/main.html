@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>mian</title>
+
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../node_modules/vue/dist/vue.js"></script>
+    <script src="../node_modules/vue-router/dist/vue-router.js"></script>
+    <!-- Custom styles for this template -->
+    <link href="../public/css/navbar.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-inverse navbar-static-top" style="background-color:rgb(20,20,20);">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/dgmdream">Dgm dream</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {{if nickname}}
+                    <li style="padding-top:7.5px; margin-right: -5px;">
+                        <img style="width: 38px;" src="{{avatar}}" class="img-circle">
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">{{nickname}}<span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="border-radius: 10px;">
+
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户:{{nickname}}</li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/info">个人主页</a></li>
+                            <li><a href="/set">设置</a></li>
+                            <li><a href="/logout">退出</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/speak">发言</a></li>
+                    {{else}}
+                    <li><a href="/login">登录</a></li>
+                    <li><a href="/register">注册</a></li>
+                    {{/if}}
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div id="myapp" class="container">
+        <router-view></router-view>
+    </div>
+    <script>
+        var main = {
+            template: `
+            <div class="container">
+            <div class="jumbotron" id="jumbostron">
+                <div id="menu">
+                    <ul>
+                        <li><router-link to="/all">全部</router-link></li>
+                        <li><router-link to="/hotspot">热点</router-link></li>
+                        <li><router-link to="/interaction">互动</router-link></li>
+                        <li><router-link to="/opinion">意见</router-link></li>
+                        <li><router-link to="/cooperation">合作伙伴</router-link></li>
+                        <li><router-link to="/enterprise">入驻企业</router-link></li>
+                        <li><router-link to="/contact">联系我们</router-link></li>
+                    </ul>
+                </div>
+                <div id="comments">
+                    <ul>      
+                          <router-view></router-view>  
+                     </ul>
+    
+                </div>
+            </div>
+        </div>
+            `
+        }
+
+        var all = {
+            template: `<div> 
+                <div id="comments" class="container">
+                    <ul><router-view></router-view></ul>
+                </div>
+
+            <ul class="pagination">
+	        <li><router-link to="/a0">&laquo;</router-link></li>
+	        <li><router-link to="/a1">1</router-link></li>
+	        <li><router-link to="/a2">2<//router-link></li>
+            <li><router-link to="/a3">3<//router-link></li>
+            <li><router-link to="/a4">4<//router-link></li>
+            <li><router-link to="/a5">5<//router-link></li>
+            <li id="rt"><router-link to="#">...<//router-link></li>
+            <li id="rt1" style="display: none"><router-link to="/a6">6<//router-link></li>
+            <li id="rt2" style="display: none"><router-link to="/a7">7<//router-link></li>
+            <li id="rt3" style="display: none"><router-link to="/a8">8<//router-link></li>
+            <li id="rt4" style="display: none"><router-link to="/a9">9<//router-link></li>
+            <li id="rt5" style="display: none"><router-link to="/a10">10<//router-link></li>
+            <li><router-link to="/aa">&raquo;</router-link></li>
+            </ul><br>
+    
+          </div>`
+        }
+        var hotspot = {
+            template: `<div style="font-size:16px">暂未开放热点功能</div>`
+        }
+        var interaction = {
+            template: `<div style="font-size:16px">暂未开放互动功能</div>`
+        }
+        var opinion = {
+            template: `<div style="font-size:16px">暂未开放意见功能</div>`
+        }
+        var cooperation = {
+            template: `<div style="font-size:16px">暂未开放合作伙伴功能</div>`
+        }
+        var enterprise = {
+            template: `<div style="font-size:16px">暂未开放入驻企业功能</div>`
+        }
+        var contact = {
+            template: `<div style="font-size:16px">暂未开放联系我们功能</div>`
+        }
+        var a1={
+            template: `<div>
+            {{each data}}
+            {{if 0<=$index && $index<=9}}
+          <li class="list-group-item">
+            <img style="width: 40px;"
+              src="{{$value.avatar}}" class="img-circle">
+            <a id="a" href="/comments/?id={{$value.id}}">{{$value.title}}<span id="times" class="pull-right">{{$value.speaktime}}</span></a>
+          </li>
+            {{/if}}
+            {{/each}}
+        </div>`
+        }
+        var a2 = {
+            template: `<div>
+            {{each data}}
+            {{if 9<$index && $index<=19}}
+          <li class="list-group-item">
+            <img style="width: 40px;"
+              src="{{$value.avatar}}" class="img-circle">
+            <a id="a" href="/comments/?id={{$value.id}}">{{$value.title}}<span id="times" class="pull-right">{{$value.speaktime}}</span></a>
+          </li>
+            {{/if}}
+            {{/each}}
+        </div>`
+        }
+        var a3 = {
+            template: `<div>
+            {{each data}}
+            {{if 19<$index && $index<=29}}
+          <li class="list-group-item">
+            <img style="width: 40px;"
+              src="{{$value.avatar}}" class="img-circle">
+            <a id="a" href="/comments/?id={{$value.id}}">{{$value.title}}<span id="times" class="pull-right">{{$value.speaktime}}</span></a>
+          </li>
+            {{/if}}
+            {{/each}}
+        </div>`
+        }
+        var a4 = {
+            template: `<div>
+             {{each data}}
+             {{if 29<$index && $index<=39}}
+          <li class="list-group-item">
+            <img style="width: 40px;"
+              src="{{$value.avatar}}" class="img-circle">
+            <a id="a" href="/comments/?id={{$value.id}}">{{$value.title}}<span id="times" class="pull-right">{{$value.speaktime}}</span></a>
+          </li>
+            {{/if}}
+            {{/each}}
+        </div>`
+        }
+        var a5 = {
+            template: `<div>
+            {{each data}}
+            {{if 39<$index && $index<=49}}
+          <li class="list-group-item">
+            <img style="width: 40px;"
+              src="{{$value.avatar}}" class="img-circle">
+            <a id="a" href="/comments/?id={{$value.id}}">{{$value.title}}<span id="times" class="pull-right">{{$value.speaktime}}</span></a>
+          </li>
+            {{/if}}
+            {{/each}}
+        </div>`
+        }
+        var a6 = {
+            template: `<div>
+            {{each data}}
+            {{if 49<$index && $index<=59}}
+          <li class="list-group-item">
+            <img style="width: 40px;"
+              src="{{$value.avatar}}" class="img-circle">
+            <a id="a" href="/comments/?id={{$value.id}}">{{$value.title}}<span id="times" class="pull-right">{{$value.speaktime}}</span></a>
+          </li>
+            {{/if}}
+            {{/each}}
+        </div>`
+        }
+        var a7 = {
+            template: `<div>
+            {{each data}}
+            {{if 59<$index && $index<=69}}
+          <li class="list-group-item">
+            <img style="width: 40px;"
+              src="{{$value.avatar}}" class="img-circle">
+            <a id="a" href="/comments/?id={{$value.id}}">{{$value.title}}<span id="times" class="pull-right">{{$value.speaktime}}</span></a>
+          </li>
+            {{/if}}
+            {{/each}}
+        </div>`
+        }
+        var a8 = {
+            template: `<div>
+            {{each data}}
+            {{if 69<$index && $index<=79}}
+          <li class="list-group-item">
+            <img style="width: 40px;"
+              src="{{$value.avatar}}" class="img-circle">
+            <a id="a" href="/comments/?id={{$value.id}}">{{$value.title}}<span id="times" class="pull-right">{{$value.speaktime}}</span></a>
+          </li>
+            {{/if}}
+            {{/each}}
+        </div>`
+        }
+        var a9 = {
+            template: `<div>
+            {{each data}}
+            {{if 79<$index && $index<=89}}
+          <li class="list-group-item">
+            <img style="width: 40px;"
+              src="{{$value.avatar}}" class="img-circle">
+            <a id="a" href="/comments/?id={{$value.id}}">{{$value.title}}<span id="times" class="pull-right">{{$value.speaktime}}</span></a>
+          </li>
+            {{/if}}
+            {{/each}}
+        </div>`
+        }
+        var a10 = {
+            template: `<div>
+            {{each data}}
+            {{if 89<$index && $index<=99}}
+          <li class="list-group-item">
+            <img style="width: 40px;"
+              src="{{$value.avatar}}" class="img-circle">
+            <a id="a" href="/comments/?id={{$value.id}}">{{$value.title}}<span id="times" class="pull-right">{{$value.speaktime}}</span></a>
+          </li>
+            {{/if}}
+            {{/each}}
+        </div>`
+        }
+        const router = new VueRouter({
+            routes: [
+                {
+                    path: '/',
+                    redirect: 'all',
+                    component: main,
+                    children: [
+                        { path: '/all', redirect: 'a1', component: all,children:[
+                        { path: '/a0', component: a1 },
+                        { path: '/a1', component: a1 },
+                        { path: '/a2', component: a2 },
+                        { path: '/a3', component: a3 },
+                        { path: '/a4', component: a4 },
+                        { path: '/a5', component: a5 },
+                        { path: '/a6', component: a6 },
+                        { path: '/a7', component: a7 },
+                        { path: '/a8', component: a8 },
+                        { path: '/a9', component: a9 },
+                        { path: '/a10', component: a10 },
+                        { path: '/aa', component: a10 }, 
+                        ] },
+
+                        { path: '/hotspot', component: hotspot },
+                        { path: '/interaction', component: interaction },
+                        { path: '/opinion', component: opinion },
+                        { path: '/cooperation', component: cooperation },
+                        { path: '/enterprise', component: enterprise },
+                        { path: '/contact', component: contact },
+                        
+                    ]
+                }
+            ]
+        })
+        var app = new Vue({
+            el: '#myapp',
+            data: {
+
+            },
+            router: router
+        })
+    </script>
+    <script>
+        $(function(){
+            $("#rt").click(function(){
+                $("#rt1").show()
+                $("#rt2").show()
+                $("#rt3").show()
+                $("#rt4").show()
+                $("#rt5").show()
+                $("#rt").hide()
+            })
+        })
+    </script>
+</body>
+
+</html>

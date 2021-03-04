@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <nav class="navbar navbar-static navbar-inverse" id="my" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navs">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="#" class="navbar-brand">菜单栏啊</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navs">
+                <ul class="nav navbar-nav">
+                    <li><a href="#nav1">nav1</a></li>
+                    <li><a href="#nav2">nav2</a></li>
+                    <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#nav3">nav3<span
+                                class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#nav4">nav4</a></li>
+                            <li><a href="#nav5">nav5</a></li>
+                            <li><a href="#nav6">nav6</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+        <div data-spy="scroll" data-target="#my" data-offset="0" style="height:100px;overflow:auto; position: relative;">
+            <h4 id="nav1">iOS</h4>
+            <p>iOS 是一个由苹果公司开发和发布的手机操作系统。最初是于 2007 年首次发布 iPhone、iPod Touch 和 Apple
+                TV。iOS 派生自 OS X，它们共享 Darwin 基础。OS X 操作系统是用在苹果电脑上，iOS 是苹果的移动版本。
+            </p>
+            <h4 id="nav2">SVN</h4>
+            <p>Apache Subversion，通常缩写为 SVN，是一款开源的版本控制系统软件。Subversion 由 CollabNet 公司在 2000 年创建。但是现在它已经发展为 Apache Software
+                Foundation 的一个项目，因此拥有丰富的开发人员和用户社区。
+            </p>
+            <h4 id="nav4">jMeter</h4>
+            <p>jMeter 是一款开源的测试软件。它是 100% 纯 Java 应用程序，用于负载和性能测试。
+            </p>
+            <h4 id="nav5">EJB</h4>
+            <p>Enterprise Java Beans（EJB）是一个创建高度可扩展性和强大企业级应用程序的开发架构，部署在兼容应用程序服务器（比如 JBOSS、Web Logic 等）的 J2EE 上。
+            </p>
+            <h4 id="nav6">Spring</h4>
+            <p>Spring 框架是一个开源的 Java 平台，为快速开发功能强大的 Java 应用程序提供了完备的基础设施支持。
+            </p>
+            <p>Spring 框架最初是由 Rod Johnson 编写的，在 2003 年 6 月首次发布于 Apache 2.0 许可证下。
+            </p>
+        </div>
+
+</body>
+</html>

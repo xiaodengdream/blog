@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>个人主页</title>
+  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <!-- Custom styles for this template -->
+  <link href="/public/css/info.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse navbar-static-top" style="background-color:rgb(20,20,20);">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+          aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/dgmdream">Dgm dream</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About</a></li>
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          {{if nickname}}
+          <li style="padding-top:7.5px; margin-right: 1px;">
+            <img style="width: 38px;" src="{{avatar}}" class="img-circle">
+          </li>
+          <li class="dropdown">
+
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">{{nickname}}<span class="caret"></span></a>
+            <ul class="dropdown-menu" style="border-radius: 10px;">
+
+              <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户:{{nickname}}</li>
+              <li role="separator" class="divider"></li>
+              <li><a href="/info">个人主页</a></li>
+              <li><a href="/set">设置</a></li>
+              <li><a href="/logout">退出</a></li>
+            </ul>
+          </li>
+          <li><a href="/speak">发言</a></li>
+          {{else}}
+          <li><a href="/login">登录</a></li>
+          <li><a href="/register">注册</a></li>
+          {{/if}}
+        </ul>
+      </div>
+      <!--/.nav-collapse -->
+    </div>
+  </nav>
+  <div class="container" style="margin-top:60px;">
+    <ul id="ul1" class="nav nav-pills nav-stacked col-xs-2">
+      <li id="disabled" class="disabled"><a href="#">个人信息</a></li>
+      <li class="active"><a data-toggle="tab" href="#a">我的信息</a></li>
+      <li><a data-toggle="tab" href="#b">会员等级</a></li>
+      <li><a data-toggle="tab" href="#c">我的发言</a></li>
+      <li><a data-toggle="tab" href="#d">最近发言</a></li>
+      <li><a data-toggle="tab" href="#e">我的收藏</a></li>
+      <li><a data-toggle="tab" href="#f">相关讨论</a></li>
+
+    </ul>
+    <div class="tab-content" id="tab-content">
+      <div id="a" class="tab-pane fade in active">
+        <ul id="ul2">
+          <li><img src="{{avatar}}" class="img-circle" style="width: 60px;" alt="">
+            <span id="span1">{{nickname}}</span></li>
+          <li>-----------------------------------------------------------------------------------</li>
+          <li>昵称：{{nickname}}</li>
+          <li>邮箱：{{email}}</li>
+          <li>性别：{{gender}}</li>
+          <li>生日：{{birthday}}</li>
+          <li>创建日期:{{createtime}}</li>
+          <li>个人标签:{{bio}}</li>
+        </ul>
+      </div>
+      <div id="b" class="tab-pane fade">
+        <div id="member">
+          暂无会员权限
+        </div>
+      </div>
+      <div id="c" class="tab-pane fade">
+        <div id="speak">
+          {{each comments}}
+          <h3 style="text-align: center; margin: 0 0 10px 0;">{{$value.title}}</h3>
+         <p style="text-indent: 2em;font-size: 16px;word-wrap:break-word;">{{$value.content}}</p>
+         
+         <a href="/infos/?id={{$value.id}}" title="删除">
+          <span class="glyphicon glyphicon-trash pull-right" style="color: rgb(0, 0, 0);margin-top:-15px">
+           </span></a>
+         <span class="pull-right" style="margin:-15px 15px 0 0">{{$value.speaktime}}</span>
+         <hr>
+          {{/each}}
+
+        </div>
+      </div>
+      <div id="d" class="tab-pane fade">
+        <div id="talk">
+         <h3 style="text-align: center;margin: 0 0 10px 0;"> 标题:{{title}}</h3>
+         内容:<p style="text-indent: 2em;font-size: 16px;word-wrap:break-word;">{{content}}</p>
+         <span class="pull-right" style="margin:-15px 15px 0 0">{{speaktime}}</span>
+        </div>
+      </div>
+      <div id="e" class="tab-pane fade">
+        <div id="collection">
+            {{each collection}}
+            <p>{{$value.names}}:</p>
+            <h3 style="text-align: center; margin: 0 0 10px 0;">{{$value.titles}}</h3>
+           <p style="text-indent: 2em;font-size: 16px;word-wrap:break-word;">{{$value.contents}}</p>
+           <a href="/collections/?id={{$value.id}}" title="删除">
+            <span class="glyphicon glyphicon-trash pull-right" style="color: rgb(0, 0, 0);margin-top:-15px">
+             </span></a>
+           <hr>
+            {{/each}}
+        </div>
+      </div>
+      <div id="f" class="tab-pane fade">
+        <div id="collection">
+          相关讨论还在研发阶段。。。。。。
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

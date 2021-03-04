@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dgm dream</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/public/css/dgmdream.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse navbar-static-top" style="background-color:rgb(20,20,20);">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/dgmdream">Dgm dream</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+
+                </ul>
+        
+                <ul class="nav navbar-nav navbar-right">
+                    {{if nickname}}
+                    <li style="padding-top:7.5px; margin-right: 1px;">
+                        <img style="width: 38px;" src="{{avatar}}" class="img-circle">
+                      </li>
+                    <li class="dropdown">
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">{{nickname}}<span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="border-radius: 10px;">
+
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户:{{nickname}}</li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/info">个人主页</a></li>
+                            <li><a href="/set">设置</a></li>
+                            <li><a href="/logout">退出</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/speak">发言</a></li>
+                    {{else}}
+                    <li><a href="/login">登录</a></li>
+                    <li><a href="/register">注册</a></li>
+                    {{/if}}
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    
+    <div class="container">
+        <div class="jumbotron" id="jumbotron">
+            <h2>我们有一个共同的梦想</h2>
+            <div class="carousel slide" style="width: 640px;height: 360px;margin-left: 195px;" id="mycarousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#mycarousel" class="active" data-slide-to="0"></li>
+                    <li data-target="#mycarousel" data-slide-to="1"></li>
+                    <li data-target="#mycarousel" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" style="height:auto;">
+                    <div class="item active">
+                        <img style="margin-left: 0px;" src="/public/img/dream1.jpg" alt="">
+                        <div class="carousel-caption">青春</div>
+                    </div>
+                    <div class="item">
+                        <img style="margin-left: 0px;" src="/public/img/dream2.jpg" alt="">
+                        <div class="carousel-caption">绽放</div>
+                    </div>
+                    <div class="item">
+                        <img style="margin-left: 0px;" src="/public/img/dream3.jpg" alt="">
+                        <div class="carousel-caption">未来</div>
+                    </div>
+                </div>
+                <a href="#mycarousel" class="carousel-control left" data-slide="prev"><span
+                        class="glyphicon glyphicon-chevron-left"></span></a>
+                <a href="#mycarousel" class="carousel-control right" data-slide="next"><span
+                        class="glyphicon glyphicon-chevron-right"></span></a>
+            </div>
+           
+           
+            <p>I don’t know what that dream is that you have,I don't care how disappointing it might have been as
+                you've been working toward that dream, but that dream that you’re holding in your mind, that it’s
+                possible!</p>
+
+            <P>我不管你的梦想是什么,也不管你在追求梦想的途中经历了多少挫折和痛苦,只要你始终坚持自己的梦想,它就有实现的一天！</p>
+
+            <P> Some of you already know, that it’s hard, it’s not easy, it's hard changing your life.That in the
+                process of working on your dreams you're going to incur lots of disappointment, a lot of failure, a lot
+                of pain. There are moments that you are going to doubt yourself. You said, God why is this happening to
+                me? I’m just trying to take care of my family, trying to give them a good life, I'm not trying to steal
+                or rob from anybody. Why does this have to happen to me. For those of you that have experienced some
+                hardships – don’t give up on your dream.</P>
+
+            <p>你们有的知道这很难,你们很难改变自己的生活轨迹.在追求梦想的过程中,你将遭遇数不尽的挫折、失败和痛苦.很多时候你甚至会怀疑你自己,
+                你说，老天为什么会让我遇上这种事情?我只想照顾好我的家人,给他们安定的生活,我本分做人，不偷不抢.老天为什么对我那么不公平.
+                如果你们有人经历过这样的磨难,请不要放弃心中的梦想！ </p>
+
+            <p> Most people they raise a family, they earn a living and then they die. They stop growing, they stop
+                working on themselves, they stop stretching, the stop pushing themselves. Then a lot of people like to
+                complain but they don’t wanna do anything about their situation. and most people don’t wo-rk on their
+                dreams – why?</p>
+
+            <P>大多数人整日里只为养家糊口而奔忙,庸庸碌碌了此一生.他们放弃了成长和做梦的机会,放弃了施展才华、挑战自我的可能。
+                很多人因此而满腹牢骚、怨天尤人，可他们不愿意有所作为、改变现状，大部分人没有实现梦想的斗志，为什么？</P>
+
+            <img src="/public/img/dream4.jpg" alt="">
+
+            <p> Everybody won't see it, everybody won't join you, everybody won’t have the vision…it’s necessary to know
+                that you are an uncommon breed. It’s necessary that you align yourself with people and attract people
+                into
+                your business, who are hungry, people who are unstoppable and unreasonable, people who are refusing to
+                live
+                life just as it is and who want more!</p>
+
+            <P>大家都看不到你的梦想，他们也不会加入你的人生，他们没有这样的视野……你要知道你不是普通的看客.
+                你一定要招引志同道合的人携手同行，你们追求梦想的脚步无可阻挡，你们拒绝满足现状！追求，永不停歇！</P>
+
+            <P>The people that are living their dreams are parting with winners, to attach themselves to the a-n-d the
+                people who are living their dreams are the people that know that if it’s going to happen it’s up to
+                them!</P>
+
+            <p> 勇于追求梦想的人是未来的成功者，他们知道成功与否只在于他们自己 </p>
+
+            <p> don’t have to go through life being a victim. and even though you
+                face disappointments, you have to know within yourself that ‘I can do this, even if no one else sees it
+                for me, I must see it for myself!’ </p>
+
+            <P>你不需要一辈子被旁人所左右，即便你自己遭遇种种挫折，你要确信，我可以克服，即使没有人看好我，我自己要清醒看到！</p>
+
+            <p>I wannarepresent an idea. I wanna represent possibilities. Some of you right now, you wanna go to the
+                next level. You wanna be a civil engineer, you wanna council, you wanna be a doctor. Listen to me: You
+                can’t
+                get to that level. You can’t get to that level until you start to invest in your mind.</p>
+
+            <p>我想实现自己的想法、探索各种可能性，你们在座的有些人想进入更好的层次，有的想当律师，有的想成为土木工程师，有的想当医生 我想说，你进不了那个层次，除非你开始投资你自己。</p>
+            
+            <img src="/public/img/dream5.jpg" alt="">
+        </div>
+    </div>
+</body>
+<script>
+     $(document).ready(function(){
+        $("#mycarousel").carousel({interval:2500})
+             });
+    // $(function(){
+    //     window.onload(function(){
+    //         $("#mycarousel").carousel({interval:1000})
+    //     });
+       
+    // })
+</script>
+</html>

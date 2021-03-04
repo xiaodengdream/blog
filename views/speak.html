@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>speak</title>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/speak" method="post">
+            <h2 style="margin-top: 50px;text-align:center;">欢迎来此社区留言</h2>
+            <div class="form-group" style="margin-top: 35px;">
+
+                <div style="width: 40%;">
+                    <label for="inputtitle">留言标题</label>
+                    <input type="text" class="form-control" autofocus autocomplete="off" name="title" id="" cols="30" rows="1"
+                        required minlength="3" maxlength="100">
+                </div>
+                <div style="margin-top: 5px;">
+                    <label for="inputmessage">留言信息</label>
+                    <textarea class="form-control" name="content" id="" cols="30" rows="10" required minlength="3"
+                        maxlength="200"></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-info">发表</button>
+        </form>
+    </div>
+</body>
+
+</html>

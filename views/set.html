@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setting</title>
+    <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!-- Custom styles for this template -->
+    <link href="/public/css/set.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-inverse navbar-static-top" style="background-color:rgb(20,20,20);">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/dgmdream">Dgm dream</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    {{if nickname}}
+                    <li style="padding-top:7.5px; margin-right: 1px;">
+                        <img style="width: 38px;" src="{{avatar}}" class="img-circle">
+                    </li>
+                    <li class="dropdown">
+
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                            aria-expanded="false">{{nickname}}<span class="caret"></span></a>
+                        <ul class="dropdown-menu" style="border-radius: 10px;">
+
+                            <li>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;用户:{{nickname}}</li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="/info">个人主页</a></li>
+                            <li><a href="/set">设置</a></li>
+                            <li><a href="/logout">退出</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="/speak">发言</a></li>
+                    {{else}}
+                    <li><a href="/login">登录</a></li>
+                    <li><a href="/register">注册</a></li>
+                    {{/if}}
+                </ul>
+            </div>
+            <!--/.nav-collapse -->
+        </div>
+    </nav>
+    <div class="container" style="margin-top:60px;">
+        <ul id="ul1" class="nav nav-pills nav-stacked col-xs-2">
+            <li id="disabled" class="disabled"><a href="#">个人设置</a></li>
+            <li class="active"><a data-toggle="tab" href="#a">基本设置</a></li>
+            <li><a data-toggle="tab" href="#b">隐私安全</a></li>
+            <li><a data-toggle="tab" href="#c">高级设置</a></li>
+            <!-- <li><a data-toggle="tab" href="#d">最近发言</a></li>
+      <li><a data-toggle="tab" href="#e">相关讨论</a></li>
+      <li><a data-toggle="tab" href="#f">我的收藏</a></li> -->
+
+        </ul>
+        <div class="tab-content" id="tab-content">
+            <div id="a" class="tab-pane fade in active">
+                <form action="/set" method="POST" id="set">
+                    <ul id="ul2">
+                        <li><img src="{{avatar}}" class="img-circle" style="width: 60px;margin-bottom: 10px;" alt="">
+                            <span id="span1">{{nickname}}</span></li>
+                    </ul>
+                    <div class="container" style="margin-bottom: 10px;">
+                        <p id="existence" style="display: none;">邮箱或昵称已存在</p>
+                        <label style="float: left;margin: 8px 0 0 5px;" for=" ">昵称:</label>
+                        <div class="col-sm-3">
+                        <input style="float: left;border-radius: 8px;" type="text" class="form-control" 
+                            autofocus autocomplete="off" value="{{nickname}}" name="nickname" id="" cols="15" rows="1"
+                            required minlength="1" maxlength="100">
+                        </div>
+                    </div>
+
+                    <div class="container" style="margin-bottom: 10px">
+                        <label style="float: left;margin: 8px 0 0 5px;" for=" ">性别:</label>
+                        <div class="col-sm-3">
+                        <input style="float: left;border-radius: 8px;" type="text" class="form-control"
+                            autofocus autocomplete="off" value="{{gender}}" name="gender" id="" cols="15" rows="1"
+                            required minlength="1" maxlength="2">
+                        </div>
+                    </div>
+                    <div class="container" style="margin-bottom: 10px">
+                        <label style="float: left;margin: 8px 0 0 5px;" for=" ">生日:</label>
+                        <div class="col-sm-3">
+                        <input style="float: left;border-radius: 8px;" type="text" class="form-control"
+                            autofocus autocomplete="off" value="{{birthday}}" name="birthday" id="" cols="10" rows="1"
+                            required minlength="3" maxlength="20">
+                        </div>
+                    </div>
+                    <div class="container" style="margin-bottom: 10px">
+                        <label style="float: left;margin: 8px 0 0 5px;" for=" ">图片:</label>
+                        <div class="col-sm-3">
+                        <input style="float: left;border-radius: 8px;" type="text" class="form-control"
+                            autofocus autocomplete="off" value="{{avatar}}" name="avatar" id="" cols="10" rows="1"
+                            required minlength="3" maxlength="100">
+                        </div>
+                    </div>
+                    <div class="container" style="margin-bottom: 10px">
+                        <label style="float: left;margin: 8px 0 0 5px;" for=" ">简介:</label>
+                        <div class="col-sm-3">
+                        <input style="float: left;border-radius: 8px;" type="text" class="form-control"
+                            autofocus autocomplete="off" value="{{bio}}" name="bio" id="" cols="10" rows="1" required
+                            minlength="3" maxlength="100">
+                        </div>
+                    </div>
+                    <div class="container" style="margin-left:50px">
+                        <input type="submit" class="btn btn-info " value="确定">
+                    </div>
+                </form>
+            </div>
+            <div id="b" class="tab-pane fade">
+                <div id="member">
+                    <form action="/sets" method="POST" id="sets">
+                        <div class="container" style="margin-bottom: 10px;">
+
+                            <label style="float: left;margin: 8px 0 0 5px;" for=" ">输入密码:</label>
+                            <div class="col-sm-3">
+                            <input style="float: left;border-radius: 8px;" autofocus type="password"
+                                placeholder="输入新密码" class="form-control" autocomplete="off"
+                                value="" name="password1" id="ps1" cols="10" rows="1" required minlength="1"
+                                maxlength="12">
+                            </div>
+                        </div>
+                        <div class="container" style="margin-bottom: 10px;">
+                            <label style="float: left;margin: 8px 0 0 5px;" for=" ">确认密码:</label>
+                            <div class="col-sm-3">
+                            <input style="float: left;border-radius: 8px;" type="password"  autofocus
+                                placeholder="确认新密码" class="form-control" autofocus autocomplete="off" value=""
+                                name="password2" id="ps2" cols="10" rows="1" required minlength="1" maxlength="12">
+                            </div>
+                        </div>
+                        <p id="existences" style="color: blue;margin: 0 0 0 20px ;display: none;">核对无误</p>
+                        <p id="existencess" style="color: red;margin: 0 0 0 20px ;display: none;">密码不一致</p>
+                        <p id="existencesss" style="margin: 0 0 0 20px ;display: none;">密码为空</p>
+                        <div class="container" style="margin-left:50px">
+                            <input style="margin-left: 40px;" id="xz" type="button" class="btn btn-info" value="核实">
+                            <input type="submit" style="display:none" id="tj" class="btn btn-info " value="确定">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div id="c" class="tab-pane fade">
+                <div id="speak">
+                    暂未开放
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script>
+    $('#set').on('submit', function (e) {
+        e.preventDefault()
+        var formdata = $(this).serialize()
+        $.ajax({
+            url: '/set',
+            type: 'post',
+            data: formdata,
+            dataType: 'json',
+            success: function (data) {
+                var code = data.code
+                if (code === 500) {
+                    window.alert('error')
+                }
+                else if (code === 1) {
+                    $('#existence').show()
+                }
+                else if (code === 0) {
+                    window.location.href = '/'//客服端重定向
+                    window.alert('修改成功,请重新登陆')
+                }
+                console.log(data)
+            }
+        })
+    })
+    $('#xz').click(function () {
+        if ($('#ps1').val() === '' && $('#ps1').val() === '') {
+            $('#existencesss').show()
+            $('#existences').hide()
+            $('#existencess').hide()
+            $('#tj').hide()
+        }
+        else if ($('#ps1').val() === $('#ps2').val()) {
+            $('#existences').show()
+            $('#tj').show()
+            $('#existencess').hide()
+            $('#existencesss').hide()
+        }
+        else if ($('#ps1').val() !== $('#ps2').val()) {
+            $('#existencess').show()
+            $('#existences').hide()
+            $('#existencesss').hide()
+            $('#tj').hide()
+        }
+
+    })
+</script>
+</html>
