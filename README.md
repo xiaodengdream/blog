@@ -1,1 +1,11 @@
 # blog
+![image](https://user-images.githubusercontent.com/68885555/109917410-4796ea00-7cf0-11eb-9fcd-982633afddcd.png)
+![image](https://user-images.githubusercontent.com/68885555/109917430-4ebdf800-7cf0-11eb-8385-20da568e5625.png)
+![image](https://user-images.githubusercontent.com/68885555/109917474-6301f500-7cf0-11eb-8804-4ab9ac9b0494.png)
+![image](https://user-images.githubusercontent.com/68885555/109917481-685f3f80-7cf0-11eb-80e6-be225937de77.png)
+![image](https://user-images.githubusercontent.com/68885555/109917517-7745f200-7cf0-11eb-858d-672872778360.png)
+![image](https://user-images.githubusercontent.com/68885555/109917547-7f059680-7cf0-11eb-9176-c929cd25f780.png)
+![image](https://user-images.githubusercontent.com/68885555/109917567-84fb7780-7cf0-11eb-8a41-55428323a1eb.png)
+![image](https://user-images.githubusercontent.com/68885555/109917587-8dec4900-7cf0-11eb-9e2b-d7a08e9ebd93.png)
+![image](https://user-images.githubusercontent.com/68885555/109917618-99d80b00-7cf0-11eb-822e-7423cc0212d4.png)
+![Uploading image.png…]()
