@@ -24,5 +24,5 @@ app.use(session({
 app.use(router)
 
 app.listen('2000', function () {
-    console.log('服务器1000已经启动')
+    console.log('服务器2000已经启动')
 })
